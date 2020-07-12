@@ -1,4 +1,4 @@
-package com.sortesvergilianae.sortes;
+package com.sortesvergilianae;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
