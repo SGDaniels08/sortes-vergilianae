@@ -19,8 +19,11 @@ public class BookStorage {
     }
 
     // Other methods
-    public Collection<Book> findBookById(long id) {
-        return (Collection<Book>) bookRepo.findById(id).get();
+    public Collection<Book> findAllBooks() {
+        return (Collection<Book>) bookRepo.findAll();
+    }
+    public Book findBookById(long id) {
+        return bookRepo.findById(id).get();
     }
 
 }

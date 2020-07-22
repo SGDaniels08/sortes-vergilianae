@@ -1,5 +1,6 @@
 package com.sortesvergilianae.Controllers;
 
+import com.sortesvergilianae.Entities.Line;
 import com.sortesvergilianae.Storage.LineStorage;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,4 @@ public class LineController {
     public LineStorage getLineStorage() {
         return lineStorage;
     }
-
-    // Mapping Methods
-    GetMapping()
 }

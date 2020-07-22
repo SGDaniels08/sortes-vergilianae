@@ -1,5 +1,7 @@
 package com.sortesvergilianae.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,14 +15,16 @@ public class Line {
     @GeneratedValue
     private long id;
     private int lineNumber;
+    @JsonIgnore
     @ManyToOne
     private Book book;
     private String verse;
 
     // Constructor
     protected Line() {}
-    public Line(int lineNumber, String verse) {
+    public Line(int lineNumber, Book book, String verse) {
         this.lineNumber = lineNumber;
+        this.book = book;
         this.verse = verse;
     }
 
