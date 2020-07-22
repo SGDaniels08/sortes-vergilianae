@@ -23,7 +23,4 @@ public class BookStorage {
         return (Collection<Book>) bookRepo.findById(id).get();
     }
 
-    public Book findAllBooks() {
-
-    }
 }
