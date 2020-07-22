@@ -13,13 +13,17 @@ public class Book {
     @Id
     @GeneratedValue
     private long id;
-    @OneToMany (mappedBy = "book")
+    @OneToMany(mappedBy = "book")
     private Collection<Line> lines;
+    private int bookNumber;
 
     // Constructor
-    protected Book() {}
-    public Book(Collection<Line> lines) {
+    protected Book() {
+    }
+
+    public Book(Collection<Line> lines, int bookNumber) {
         this.lines = lines;
+        this.bookNumber = bookNumber;
     }
 
     // Getter
@@ -27,6 +31,7 @@ public class Book {
     public long getId() {
         return id;
     }
+
     public Collection<Line> getLines() {
         return lines;
     }
