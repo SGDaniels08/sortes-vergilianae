@@ -2,6 +2,7 @@ package com.sortesvergilianae.Controllers;
 
 import com.sortesvergilianae.Entities.Line;
 import com.sortesvergilianae.Storage.LineStorage;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
