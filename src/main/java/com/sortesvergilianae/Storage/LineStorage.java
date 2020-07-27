@@ -5,6 +5,7 @@ import com.sortesvergilianae.Storage.Repositories.LineRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -30,9 +31,8 @@ public class LineStorage {
 
     public Line findRandomLine() {
         Random rndm = new Random();
-        int lineSize =  (int) lineRepo.count();
-        long randId = (long) rndm.nextInt(lineSize);
-        return lineRepo.findById(randId).get();
+        List allLines = (List) findAllLines();
+        return (Line) allLines.get(rndm.nextInt(allLines.size()));
     }
 
 }
