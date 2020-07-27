@@ -24,9 +24,15 @@ public class LineStorage {
         return (Collection<Line>) lineRepo.findAll();
     }
 
+    public Line findLineById(long id) {
+        return lineRepo.findById(id).get();
+    }
+
     public Line findRandomLine() {
         Random rndm = new Random();
-        long randId = rndm.nextLong();
+        int lineSize =  (int) lineRepo.count();
+        long randId = (long) rndm.nextInt(lineSize);
         return lineRepo.findById(randId).get();
     }
+
 }
