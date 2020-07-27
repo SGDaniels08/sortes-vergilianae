@@ -72,20 +72,23 @@ public class Populator implements CommandLineRunner {
         /***** Read Files *****/
 
 
-        File file = new File("c:/Users/SGDan/Desktop/Code/sortes-vergilianae/src/main/resources/Aeneid/book1.txt");
-        Scanner libLeg = new Scanner(file);
+        for (long bookNum = 1; bookNum <= 12; bookNum++) {
+            File file = new File("c:/Users/SGDan/Desktop/Code/sortes-vergilianae/src/main/resources/Aeneid/book" + bookNum + ".txt");
+            Scanner libLeg = new Scanner(file);
 
-        String verse;
-        Line line;
-        int lineNumber = 0;
+            Line line;
+            int lineNumber = 1;
+            Book currentBook = bookRepo.findById(bookNum).get();
+            String verse;
 
-        while (libLeg.hasNextLine()) {
-            verse = libLeg.nextLine();
-            line = new Line(lineNumber, book1, verse);
-            lineRepo.save(line);
-            lineNumber++;
+
+            while (libLeg.hasNextLine()) {
+                verse = libLeg.nextLine();
+                line = new Line(lineNumber, currentBook, verse);
+                lineRepo.save(line);
+                lineNumber++;
+            }
         }
-
 
         /*    for each book:
             read through book file; save a line to a variable
