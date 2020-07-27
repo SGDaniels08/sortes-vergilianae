@@ -1,4 +1,4 @@
-package org.wcci.apimastery;
+package com.sortesvergilianae;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

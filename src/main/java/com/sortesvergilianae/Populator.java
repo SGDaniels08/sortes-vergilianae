@@ -73,7 +73,7 @@ public class Populator implements CommandLineRunner {
 
 
         for (long bookNum = 1; bookNum <= 12; bookNum++) {
-            File file = new File("c:/Users/SGDan/Desktop/Code/sortes-vergilianae/src/main/resources/Aeneid/book" + bookNum + ".txt");
+            File file = new File("C:/Users/SGDan/Desktop/Code/sortes-vergilianae/src/main/resources/Aeneid/book" + bookNum + ".txt");
             Scanner libLeg = new Scanner(file);
 
             Line line;
