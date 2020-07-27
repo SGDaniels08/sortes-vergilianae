@@ -49,14 +49,28 @@ public class Populator implements CommandLineRunner {
         bookRepo.save(book12);
 
         // Create lines
-        File file = new File("/Aeneid/book1.txt");
-        Scanner libLeg = new Scanner(file);
+//        File file = new File("c:/Users/SGDan/Desktop/Code/sortes-vergilianae/src/main/resources/Aeneid/book1.txt");
+//        Scanner libLeg = new Scanner(file);
 
-        Line line;
-        int lineNumber = 1;
-        String verse;
 
-        while (libLeg.hasNextLine()) {
+        String verse1 = "Arma virumque canō, Trōiae quī prīmus ab ōrīs";
+        String verse2 = "Ītaliam, fātō profugus, Lāvīniaque vēnit";
+        String verse3 = "lītora, multum ille et terrīs iactātus et altō";
+        String verse4 = "vī superum saevae memorem Iūnōnis ob īram;";
+        String verse5 = "multa quoque et bellō passūs, dum conderet urbem,";
+
+        Line line1 = new Line(1, book1, verse1);
+        Line line2 = new Line(2, book1, verse2);
+        Line line3 = new Line(3, book1, verse3);
+        Line line4 = new Line(4, book1, verse4);
+        Line line5 = new Line(5, book1, verse5);
+        lineRepo.save(line1);
+        lineRepo.save(line2);
+        lineRepo.save(line3);
+        lineRepo.save(line4);
+        lineRepo.save(line5);
+
+/*        while (libLeg.hasNextLine()) {
             verse = libLeg.nextLine();
             line = new Line(lineNumber, book1, verse);
             lineRepo.save(line);
@@ -69,5 +83,4 @@ public class Populator implements CommandLineRunner {
             save that variable to repo
          */
     }
-
 }

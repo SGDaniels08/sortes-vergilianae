@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 @Entity
@@ -26,7 +27,7 @@ public class Book {
         this.bookNumber = bookNumber;
     }
 
-    // Getter
+    // Getters
 
     public long getId() {
         return id;
@@ -36,11 +37,11 @@ public class Book {
         return lines;
     }
 
-    // Other Methods
+    // Other methods
     public Line findRandomLine() {
-        int bookLength = lines.size();
-        Random rnd = new Random(bookLength);
-        Line[] bookLines = (Line[]) lines.toArray();
-        return bookLines[rnd.nextInt()];
+        Random rnd = new Random();
+        int randomIndex = rnd.nextInt(lines.size());
+        List randLines = (List) lines;
+        return (Line) randLines.get(randomIndex);
     }
 }

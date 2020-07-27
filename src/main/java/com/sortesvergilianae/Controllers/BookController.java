@@ -32,14 +32,15 @@ public class BookController {
     }
 
     @GetMapping("/api/books/{id}")
-    public Book getSingleBook(@PathVariable long id) {
+    public Book findSingleBook(@PathVariable long id) {
         Book bookToShow = bookStorage.findBookById(id);
         return bookToShow;
     }
 
     @GetMapping("/api/books/{bookId}/line")
-    public Line getRandomLine(@PathVariable long bookId) {
-        Book bookToShow  = bookStorage.findBookById(bookId);
-        return bookToShow.findRandomLine();
+    public Line findRandomLineFromBook(@PathVariable long bookId) {
+        Book bookToSearch = bookStorage.findBookById(bookId);
+        return bookToSearch.findRandomLine();
+
     }
 }
